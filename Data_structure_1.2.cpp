@@ -37,19 +37,24 @@ int main()
 {
 	double a[MAXN];
 	double res;
+	int loop = 10000000;
 	for (int i = 0; i < MAXN; i++) a[i] = (double)i;
 
 	printf("===========BRGIN=================\n");
 	start = clock();
-	res = f1(MAXN, a, 1.1);
+	for (int i = 1; i <= loop; i++) {
+		res = f1(MAXN, a, 1.1);
+	}
 	stop = clock();
-	printf("Function result is: %f\n", res);
+	//printf("Function result is: %f\n", res);
 	printf("Run Time is: %f\n", (double)(stop - start) / CLK_TCK);
 	printf("===========FUNC1 OVER============\n");
 	start = clock();
-	res = f2(MAXN, a, 1.1);
+	for (int i = 1; i <= loop; i++) {
+		res = f2(MAXN, a, 1.1);
+	}
 	stop = clock();
-	printf("Function result is: %f\n", res);
+	//printf("Function result is: %f\n", res);
 	printf("Run Time is: %f\n", (double)(stop - start) / CLK_TCK);
 	printf("============END====================\n");
 }
